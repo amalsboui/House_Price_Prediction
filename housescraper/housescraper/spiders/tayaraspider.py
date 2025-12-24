@@ -10,7 +10,7 @@ class TayaraspiderSpider(scrapy.Spider):
     start_urls = ["https://www.tayara.tn/listing/c/immobilier"]
 
     def parse(self, response):
-        houses = response.css("li.snap-start article")
+        houses = response.css("article.mx-0")
 
         for house in houses:
 
