@@ -13,9 +13,10 @@ from itemadapter import ItemAdapter
 
 class HousescraperPipeline:
 
-    allowed_types = ["Villa", "Appart", "Duplex", "Triplex"]
+    allowed_types_immobilier = ["Villa", "Appart", "Duplex", "Triplex"]
 
     def process_item(self, item, spider):
+        source = item["source"]
 
         adapter = ItemAdapter(item)
         
@@ -63,8 +64,8 @@ class HousescraperPipeline:
             if adapter.get(f) is None:
                 raise DropItem(f"Missing {f} for item: {adapter.get('titre')}")
         
-        # Drop items with type_bien not allowed
-        if adapter.get("type_bien") not in self.allowed_types:
+        # Drop items with type_bien not allowed in immobilier
+        if adapter.get("type_bien") not in self.allowed_types_immobilier:
             raise DropItem(f"Ignored adapter because type_bien not allowed: {adapter.get('type_bien')}")
 
 

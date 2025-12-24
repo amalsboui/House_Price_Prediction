@@ -18,3 +18,5 @@ class HouseItem(scrapy.Item):
     chambres = scrapy.Field()
     ville = scrapy.Field()
     type_bien = scrapy.Field()
+    type_transaction = scrapy.Field()
+    source = scrapy.Field()
