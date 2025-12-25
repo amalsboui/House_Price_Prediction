@@ -132,6 +132,3 @@ This project is **ongoing**, and there are several potential directions for furt
 - **Model Improvement** through additional **feature engineering**, hyperparameter tuning, and the use of **ensemble methods**.
 - **Model Deployment**: The trained model can be deployed as a **web API** for real-time predictions.
 - **MLOps**....
-
----
-
